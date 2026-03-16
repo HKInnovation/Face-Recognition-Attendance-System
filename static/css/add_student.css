@@ -1,0 +1,135 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background-image:url("f6.jpg") ;
+  background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center Container */
+.container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Glassmorphism Card */
+.card {
+    width: 420px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.3);
+    color: #000000;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+/* Input Group */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.input-group input[type="text"],
+.input-group input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Text Input Styling */
+.input-group input[type="text"] {
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    transition: 0.3s;
+}
+
+.input-group input[type="text"]:focus {
+    box-shadow: 0 0 0 2px #00c6ff;
+}
+
+/* File Input Styling */
+.input-group input[type="file"] {
+    background: rgba(204, 204, 204, 0.8);
+    cursor: pointer;
+}
+
+/* Submit Button */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    background: #2a07a7;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 114, 255, 0.5);
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .card {
+        width: 95%;
+        padding: 25px;
+    }
+}

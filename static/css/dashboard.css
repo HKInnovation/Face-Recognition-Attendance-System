@@ -1,0 +1,140 @@
+body{
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:#f4f6f9;
+  margin:0;
+  padding:0;
+  color:#333;
+}
+
+.container{
+  width:90%;
+  margin:30px auto;
+  background:#fff;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+h1{
+  text-align:center;
+  margin-bottom:20px;
+  color:#222;
+}
+
+/* Top bar */
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:20px;
+}
+
+/* Search form */
+
+.topbar form{
+  display:flex;
+  gap:8px;
+}
+
+.topbar input{
+  padding:7px 10px;
+  border:1px solid #ccc;
+  border-radius:6px;
+  font-size:14px;
+}
+
+.topbar button{
+  padding:7px 14px;
+  background:#007bff;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.topbar button:hover{
+  background:#0056b3;
+}
+
+/* Action Buttons */
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.actions a{
+  display:inline-block;
+  padding:8px 14px;
+  background:#007bff;
+  color:white;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:500;
+  transition:0.2s;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Hover animation */
+
+.actions a:hover{
+  background:#0056b3;
+  transform:translateY(-1px);
+}
+
+/* Special colors */
+
+.actions a[href*="export"]{
+  background:#28a745;
+}
+
+.actions a[href*="logout"]{
+  background:#dc3545;
+}
+
+.actions a[href*="logout"]:hover{
+  background:#b02a37;
+}
+
+/* Table styling */
+
+table{
+  width:100%;
+  border-collapse:collapse;
+}
+
+th{
+  background:#007bff;
+  color:white;
+  padding:10px;
+}
+
+td{
+  padding:10px;
+  border:1px solid #ddd;
+  text-align:center;
+}
+
+tr:nth-child(even){
+  background:#f9f9f9;
+}
+
+tr:hover{
+  background:#eef3ff;
+}
+
+/* Delete link */
+
+td a{
+  color:red;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+td a:hover{
+  text-decoration:underline;
+}

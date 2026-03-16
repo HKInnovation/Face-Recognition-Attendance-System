@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student | Face Recognition System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_student.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h2>Add New Student</h2>
+        <p class="subtitle">Register student for Face Recognition Attendance</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            
+            <div class="input-group">
+                <label>Student Name</label>
+                <input type="text" name="name" placeholder="Enter student name" required>
+            </div>
+
+            <div class="input-group">
+                <label>Upload Student Image</label>
+                <input type="file" name="image" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="btn">Add Student</button>
+        </form>
+
+        <a href="{{ url_for('dashboard') }}" class="back-btn">⬅ Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

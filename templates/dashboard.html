@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+<body>
+<div class="container">
+<h1>Attendance Dashboard</h1>
+
+<div class="topbar">
+
+<form method="GET" action="{{ url_for('dashboard') }}">
+<input type="text" name="name" placeholder="Name filter">
+<input type="text" name="date" placeholder="YYYY-MM-DD">
+<button type="submit">Search</button>
+</form>
+
+<div class="actions">
+
+{% if user in ['admin', 'teacher'] %}
+<a href="{{ url_for('mark_attendance') }}">📷 Mark Attendance</a>
+{% endif %}
+
+{% if user == 'admin' %}
+<a href="{{ url_for('undo_delete') }}">↩️ Undo Delete</a>
+<a href="{{ url_for('add_student') }}">➕ Add Student</a>
+{% endif %}
+
+<a href="{{ url_for('export_csv') }}">📤 Export CSV</a>
+<a href="{{ url_for('logout') }}">🚪 Logout</a>
+
+</div>
+</div>
+
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Date</th>
+<th>IN</th>
+<th>OUT</th>
+<th>Total Hours</th>
+<th>Status</th>
+{% if user == 'admin' %}
+<th>Action</th>
+{% endif %}
+</tr>
+
+{% for record in records %}
+<tr>
+<td>{{ record.id }}</td>
+<td>{{ record.name }}</td>
+<td>{{ record.date }}</td>
+<td>{{ record.time or '-' }}</td>
+<td>{{ record.out_time or '-' }}</td>
+<td>{{ record.hours or '-' }}</td>
+
+<td>
+{% if record.time and not record.out_time %}
+IN
+{% elif record.time and record.out_time %}
+COMPLETED
+{% else %}
+-
+{% endif %}
+</td>
+
+{% if user == 'admin' %}
+<td>
+<a href="{{ url_for('delete', id=record.id) }}">Delete</a>
+</td>
+{% endif %}
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+</body>
+</html>
