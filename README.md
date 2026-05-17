@@ -23,27 +23,7 @@ An automated attendance system using face recognition technology to identify ind
 
 💻 Offline Capable — Works completely without internet; runs on any standard laptop + webcam
 
-┌─────────────────────────────────────────────────────────────┐
-│                        FRONT-END LAYER                      │
-│   📷 Camera Module  →  User Interface  ←  Admin Panel      │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ live feed
-┌──────────────────────────▼──────────────────────────────────┐
-│                      PROCESSING LAYER                       │
-│                                                             │
-│  Preprocessing → HOG Detection → ResNet CNN → Matching      │
-│                                                             │
-└──────────────────────────┬──────────────────────────────────┘
-                           │ fetch encodings / store records
-┌──────────────────────────▼──────────────────────────────────┐
-│                       DATABASE LAYER                        │
-│         👤 User Database    📅 Attendance Database          │
-└──────────────────────────┬──────────────────────────────────┘
-                           │
-┌──────────────────────────▼──────────────────────────────────┐
-│                        OUTPUT LAYER                         │
-│         📋 Attendance Reports    ✅ Attendance Marking       │
-└─────────────────────────────────────────────────────────────┘
+
 
 
 
